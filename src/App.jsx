@@ -21,7 +21,7 @@ export default function App () {
   function toggleTodo (id , completed){
     setTodos(currentTodos => {
       return currentTodos.map (todo=> {
-        if(todo.id==id) {
+        if(todo.id === id) {
           return {...todo,completed}
         }
         return todo
@@ -44,8 +44,8 @@ export default function App () {
 
   </form>
   <h1 className="header">Todo list</h1>
-  <u1 className="list">
-    {todos.lenght === 0 && "No Todos"}
+  <ul className="list">
+    {todos.length === 0 && "No Todos"}
     {todos.map(todo => {
        return <li key={todo.id}>
       <label>
@@ -56,7 +56,7 @@ export default function App () {
       <button onClick={() => deleteTodo(todo.id)} className="btn btn-danger">Delete</button>
     </li>
     })}
-  </u1>
+  </ul>
   </>
   )
 }
